@@ -6,6 +6,9 @@ import lab07.core.entity.Student;
 import lab07.core.entity.Subject;
 import lab07.core.entity.Type;
 import lab07.core.service.GradeService;
+import lab07.core.service.StudentService;
+import lab07.core.service.SubjectService;
+import lab07.core.service.TypeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -45,11 +48,11 @@ public class DataService {
     }
 
 
-    private List<Type>  registerTypes() {
-       List<Type> types = new ArrayList<>();
-        types.add( createType("Homework", 1));
-        types.add( createType("Exam", 3));
-        types.add( createType("Project", 2));
+    private List<Type> registerTypes() {
+        List<Type> types = new ArrayList<>();
+        types.add(createType("Homework", 1));
+        types.add(createType("Exam", 3));
+        types.add(createType("Project", 2));
         return types;
     }
 
@@ -86,51 +89,42 @@ public class DataService {
     }
 
 
-
     private void registerStudents(Map<String, Subject> subjects, List<Type> types) {
         Random random = new Random();
 
         List<Student> students = new ArrayList<>();
-        students.add(new Student("Ahmed", "ABOELNAGA", "ahmed.aboelnaga@student.junia.com"));
-        students.add(new Student("Isabella", "BACALAO", "isabella.bacalao@student.junia.com"));
-        students.add(new Student("Ronan", "BALUSSON", "ronan.balusson@student.junia.com"));
-        students.add(new Student("Marc", "BAYART", "marc.bayart@student.junia.com"));
-        students.add(new Student("Ahmed", "BEN HADDOU", "ahmed.ben-haddou@student.junia.com"));
-        students.add(new Student("Yanis", "BENZIZOUN", "yanis.benzizoun@student.junia.com"));
-        students.add(new Student("Maël", "BIZOT", "mael.bizot@student.junia.com"));
-        students.add(new Student("Habib", "BOUZGUENDA", "habib.bouzguenda@student.junia.com"));
-        students.add(new Student("Gabriel", "BURGHGRAVE", "gabriel.burghgrave@student.junia.com"));
-        students.add(new Student("Charles", "CHAUDRON", "charles.chaudron@student.junia.com"));
-        students.add(new Student("Loïc", "CLEDELIN", "loic.cledelin@student.junia.com"));
-        students.add(new Student("Léonard", "CORRE", "leonard.corre@student.junia.com"));
-        students.add(new Student("Ulysse", "DAHIEZ", "ulysse.dahiez@student.junia.com"));
-        students.add(new Student("Axel", "DERLY", "axel.derly@student.junia.com"));
-        students.add(new Student("Marine", "DUTAILLY", "marine.dutailly@student.junia.com"));
-        students.add(new Student("Hugo", "DUTOIT", "hugo.dutoit@student.junia.com"));
-        students.add(new Student("César", "DUVAL", "cesar.duval@student.junia.com"));
-        students.add(new Student("Etienne", "EL GUEDER", "etienne.el-gueder@student.junia.com"));
-        students.add(new Student("Benjamin", "HAUTIER", "benjamin.hautier@student.junia.com"));
-        students.add(new Student("Baptiste", "HERBECQ", "baptiste.herbecq@student.junia.com"));
-        students.add(new Student("Marty", "HUGHES", "marty.hughes@student.junia.com"));
-        students.add(new Student("Bilal", "KADRI", "bilal.kadri@student.junia.com"));
-        students.add(new Student("Julien", "LECAT", "julien.lecat@student.junia.com"));
-        students.add(new Student("Matthieu", "LOUCHIE", "matthieu.louchie@student.junia.com"));
-        students.add(new Student("Michelle", "MARTIN", "michelle.martin@student.junia.com"));
-        students.add(new Student("Allan", "MATANGA LOVET", "allan.matanga-lovet@student.junia.com"));
-        students.add(new Student("Martin", "MILLE", "martin.mille@student.junia.com"));
-        students.add(new Student("Adam", "OUALI", "adam.ouali@student.junia.com"));
-        students.add(new Student("Mathis", "VANDEVENNE", "mathis.vandevenne@student.junia.com"));
-        students.add(new Student("Elise", "VERHOEST", "elise.verhoest@student.junia.com"));
-        students.add(new Student("Léonie", "WOLFCARIUS", "leonie.wolfcarius@student.junia.com"));
-        students.add(new Student("Clément", "ZAJAC", "clement.zajac@student.junia.com"));
+        students.add(new Student("Martin", "BASQUE FRIBAULT", "martin.basque-fribault@student.junia.com"));
+        students.add(new Student("Clovis", "CHATRY", "clovis.chatry@student.junia.com"));
+        students.add(new Student("Mohamed", "CHIKH", "mohamed.chikh@student.junia.com"));
+        students.add(new Student("Hugo", "COISNE", "hugo.coisne@student.junia.com"));
+        students.add(new Student("Alfred", "COUVREUR", "alfred.couvreur@student.junia.com"));
+        students.add(new Student("Clément", "DE TEMMERMAN", "clement.de-temmerman@student.junia.com"));
+        students.add(new Student("Tristan", "DESROUSSEAUX", "tristan.desrousseaux@student.junia.com"));
+        students.add(new Student("Raphaël", "DOUCET", "raphael.doucet@student.junia.com"));
+        students.add(new Student("Eugene", "DUSAUSOY", "eugene.dusausoy@student.junia.com"));
+        students.add(new Student("Hassan", "GHANDOUR", "hassan.ghandour@student.junia.com"));
+        students.add(new Student("Adrien", "GUILLOT", "adrien.guillot@student.junia.com"));
+        students.add(new Student("Gauthier", "HORVILLE", "gauthier.horville@student.junia.com"));
+        students.add(new Student("Timothe", "LAINE", "timothe.laine@student.junia.com"));
+        students.add(new Student("Chloe", "LELONG", "chloe.lelong@student.junia.com"));
+        students.add(new Student("Edouard", "LUYSSAERT", "edouard.luyssaert@student.junia.com"));
+        students.add(new Student("Pierre", "Olivier	MALPHETTES", "pierre-olivier.malphettes@student.junia.com"));
+        students.add(new Student("Eliseph", "MOUSSAVOU MOUSSAVOU", "eliseph.moussavou-moussavou@student.junia.com"));
+        students.add(new Student("Etienne", "OSWALD", "etienne.oswald@student.junia.com"));
+        students.add(new Student("Charles", "PRETET", "charles.pretet@student.junia.com"));
+        students.add(new Student("Salomé", "ROBIN", "salome.robin@student.junia.com"));
+        students.add(new Student("Hugo", "SANSON", "hugo.sanson@student.junia.com"));
+        students.add(new Student("Clément", "TOULORGE", "clement.toulorge@student.junia.com"));
+        students.add(new Student("Willy", "ZHENG", "willy.zheng@student.junia.com"));
 
-        for(Student student:students){
+
+        for (Student student : students) {
             List<Grade> grades = new ArrayList<>();
-            for(Subject subject:subjects.values()){
+            for (Subject subject : subjects.values()) {
                 for (int i = 0; i < 5 + random.nextInt(6); i++) {
                     LocalDate localDate = LocalDate.now().minusDays(random.nextInt(200));
                     Type type = types.get(random.nextInt(3));
-                    grades.add(new Grade(student,subject, localDate, type,10 + random.nextInt(11)));
+                    grades.add(new Grade(student, subject, localDate, type, 10 + random.nextInt(11)));
                 }
             }
             student.setGrades(grades);
