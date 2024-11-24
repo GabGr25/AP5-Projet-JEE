@@ -6,7 +6,7 @@
     <parent>
         <groupId>junia.jee</groupId>
         <artifactId>lab07</artifactId>
-        <version>2024.q1</version>
+        <version>2024.q4</version>
     </parent>
 
     <artifactId>lab07-web</artifactId>
