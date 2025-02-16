@@ -15,7 +15,7 @@ The dependencies between the modules are the following:
 ## Entities
 Inside the `lab07-core` module, you'll find 4 different entities:
 - `Student` : A student with a lastname, a firstname, an email and a collection of `Grade` entities
-- `Subject` : A subject with a name, a weight and a collection of `Grade` entities
+- `Subject` : A subject with a name, a weight
 - `Grade` : A grade with a value, a date and a link to a `Type` entity (see below)
 - `Type` : A type with a name and a weight
 
