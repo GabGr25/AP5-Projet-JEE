@@ -1,8 +1,5 @@
 package lab07.web.gateway;
 
-import lab07.web.data.Subject;
-import lab07.web.data.Type;
-import lab07.web.dto.TypeDTO;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;

@@ -1,10 +1,5 @@
 package lab07.web.gateway;
 
-import lab07.web.data.Grade;
-import lab07.web.data.Subject;
-import lab07.web.data.Type;
-import lab07.web.dto.GradeDTO;
-import lab07.web.dto.TypeDTO;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 

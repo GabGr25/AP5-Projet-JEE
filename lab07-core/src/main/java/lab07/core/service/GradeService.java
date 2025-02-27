@@ -1,7 +1,6 @@
 package lab07.core.service;
 
 import jakarta.transaction.Transactional;
-import lab07.core.entity.Grade;
 import org.springframework.stereotype.Service;
 
 @Service

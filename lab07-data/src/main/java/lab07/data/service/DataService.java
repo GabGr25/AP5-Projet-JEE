@@ -1,10 +1,6 @@
 package lab07.data.service;
 
 import jakarta.annotation.PostConstruct;
-import lab07.core.entity.Grade;
-import lab07.core.entity.Student;
-import lab07.core.entity.Subject;
-import lab07.core.entity.Type;
 import lab07.core.service.GradeService;
 import lab07.core.service.StudentService;
 import lab07.core.service.SubjectService;

@@ -1,7 +1,5 @@
 package lab07.web.controller;
 
-import lab07.web.data.Grade;
-import lab07.web.data.Subject;
 import lab07.web.gateway.GradeGateway;
 import lab07.web.gateway.StudentGateway;
 import lab07.web.gateway.SubjectGateway;

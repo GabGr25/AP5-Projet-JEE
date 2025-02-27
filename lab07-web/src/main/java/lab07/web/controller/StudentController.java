@@ -1,7 +1,5 @@
 package lab07.web.controller;
 
-import lab07.web.data.Student;
-import lab07.web.data.Subject;
 import lab07.web.gateway.StudentGateway;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
