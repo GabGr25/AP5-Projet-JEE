@@ -1,18 +1,18 @@
 package lab07.web.data;
 
-public class Personnages {
+public class Personnage {
     private long id;
 
     private String nom;
 
     private String imageURL;
 
-    private Donjons donjon;
+    private Donjon donjon;
 
-    public Personnages() {
+    public Personnage() {
     }
 
-    public Personnages(long id, String nom, String imageURL, Donjons donjon) {
+    public Personnage(long id, String nom, String imageURL, Donjon donjon) {
         this.id = id;
         this.nom = nom;
         this.imageURL = imageURL;
@@ -31,7 +31,7 @@ public class Personnages {
         return imageURL;
     }
 
-    public Donjons getDonjon() {
+    public Donjon getDonjon() {
         return donjon;
     }
 
@@ -43,7 +43,7 @@ public class Personnages {
         this.imageURL = imageURL;
     }
 
-    public void setDonjon(Donjons donjon) {
+    public void setDonjon(Donjon donjon) {
         this.donjon = donjon;
     }
 

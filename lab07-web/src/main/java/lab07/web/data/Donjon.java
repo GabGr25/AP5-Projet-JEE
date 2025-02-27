@@ -1,15 +1,15 @@
 package lab07.web.data;
 
-public class Donjons {
+public class Donjon {
 
     private long id;
 
     private String nom;
 
-    public Donjons() {
+    public Donjon() {
     }
 
-    public Donjons(long id, String nom) {
+    public Donjon(long id, String nom) {
         this.id = id;
         this.nom = nom;
     }

@@ -1,19 +1,22 @@
 package lab07.web.data;
 
-public class Classes {
+public class Carte {
     private long id;
 
     private String nom;
 
     private String imageURL;
 
-    public Classes() {
+    private Donjon donjon;
+
+    public Carte() {
     }
 
-    public Classes(long id, String nom, String imageURL) {
+    public Carte(long id, String nom, String imageURL, Donjon donjon) {
         this.id = id;
         this.nom = nom;
         this.imageURL = imageURL;
+        this.donjon = donjon;
     }
 
     public long getId() {
@@ -28,11 +31,19 @@ public class Classes {
         return imageURL;
     }
 
+    public Donjon getDonjon() {
+        return donjon;
+    }
+
     public void setNom(String nom) {
         this.nom = nom;
     }
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public void setDonjonId(Donjon donjon) {
+        this.donjon = donjon;
     }
 }
