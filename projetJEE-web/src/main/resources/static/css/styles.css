@@ -1,0 +1,140 @@
+html, body{
+    height: 100%;
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Marvel_Cinematic_Universe_logo.png"),
+    url("/img/marvel_bg.jpg");
+    background-position: top center, center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 300px,cover;
+    background-color:#000;
+    color:#fff;
+    padding-top:170px;
+}
+
+h1, pre{
+    display: none;
+}
+
+div.container {
+    margin:20px auto 0 auto;
+    position: relative;
+    color:white;
+    padding: 1em;
+    max-width: 80%;
+    background: rgba(100,100,100,.5) border-box;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset, 0 .5em 1em rgba(100,100,100, 0.6);
+    text-shadow: 3px 3px 5px rgba(0,0,0,1);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+
+div.container::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    background-image: url("/img/marvel_bg.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.container h2{
+    text-transform: uppercase;
+    color:#faf5d7;
+    width: 100%;
+}
+
+div.container div{
+    flex:1;
+}
+
+div.container div h3{
+    text-align: center;
+    color:#cbc4f1;
+}
+
+div.container div ul{
+    list-style-type: none;
+}
+
+div.container div ul li{
+    padding:5px 0;
+}
+
+div.container div ul li span{
+    font-size: 60%;
+    display: block;
+}
+
+div.container div ul li span em{
+    color: rgba(255,255,255,.5);
+}
+
+
+div.container div ul li a.delete{
+    visibility: hidden;
+    color:#a5210d;
+}
+
+div.container div ul li a.delete::before{
+    content:'🗑';
+    visibility: visible;
+}
+
+div.container div ul li a.add::before{
+    content:'+ ';
+}
+
+div.container div ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-weight: bold;
+}
+
+div.container div ul li a:hover{
+    text-decoration: underline;
+}
+
+form .form-group{
+    font-weight:bold;
+    margin:10px 0;
+}
+
+form .form-group .form-control{
+    font-size: 120%;
+    border: 3px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+    display: block;
+}
+
+form button{
+    border: 3px solid white;
+    background: white;
+    font-weight: bold;
+    padding:10px;
+    margin:5px 0;
+    color:black;
+    text-transform: uppercase;
+}
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Marvel Cinematic Universe</title>
+
+
+    <link rel="stylesheet" href="/css/styles.css" >
+
+</head>
+
+<body>
+
+<pre>
+    __  ___________  __
+   /  |/  / ____/ / / /
+  / /|_/ / /   / / / /
+ / /  / / /___/ /_/ /
+/_/  /_/\____/\____/
+
+
+</pre>
+<h1>Marvel Cinematic Universe</h1>
+
+
+<div class="container" >
+    <h2>Adding a movie for <th:block th:text="${phase.getName()}"></th:block></h2>
+    <form th:action="@{'/movies/save?phase='+${phase.getId()}}" method="post" th:object="${movie}">
+        <div class="form-group">
+            <label for="title">Movie Title</label>
+            <input class="form-control" type="text" required="" id="title" th:field="${movie.title}">
+        </div>
+        <div class="form-group">
+            <label for="release">Release Date</label>
+            <input class="form-control" type="date" required="" id="release" th:field="${movie.releaseDate}">
+        </div>
+
+
+        <button type="submit" >Add</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

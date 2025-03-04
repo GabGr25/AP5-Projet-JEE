@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Marvel Cinematic Universe</title>
+
+
+    <link rel="stylesheet" href="/css/styles.css" >
+
+</head>
+
+<body>
+
+<pre>
+    __  ___________  __
+   /  |/  / ____/ / / /
+  / /|_/ / /   / / / /
+ / /  / / /___/ /_/ /
+/_/  /_/\____/\____/
+
+
+</pre>
+<h1>Marvel Cinematic Universe</h1>
+
+
+<div class="container" th:each="saga,s:${sagas}">
+    <h2 th:text="${saga.getName()}"></h2>
+    <div th:each="phase,p:${saga.phases}">
+        <h3 th:text="${phase.getName()}"></h3>
+        <ul>
+        <li th:each="movie,m:${phase.movies}">
+            <th:block th:text="${movie.getTitle()}"></th:block> <span><em>(<th:block th:text="${movie.getReleaseDate()}"></th:block>)</em> <a class="delete" title="delete movie" th:href="@{'/movies/delete/'+${movie.id}}">remove</a></span>
+
+        </li>
+            <li><a class="add" th:href="@{'/movies/add?phase='+${phase.id}}">Add a movie for this phase</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>

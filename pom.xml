@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>junia.jee</groupId>
-    <artifactId>lab07</artifactId>
+    <artifactId>projetJEE</artifactId>
     <version>2024.q4</version>
     <packaging>pom</packaging>
+
+
     <modules>
-        <module>lab07-core</module>
-        <module>lab07-web</module>
-        <module>lab07-api</module>
-        <module>lab07-data</module>
+        <module>projetJEE-core</module>
+        <module>projetJEE-data</module>
+        <module>projetJEE-web</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
-        <spring.boot.version>3.4.0</spring.boot.version>
+        <spring.boot.version>3.3.5</spring.boot.version>
     </properties>
-
 
     <dependencyManagement>
         <dependencies>
@@ -36,11 +32,19 @@
         </dependencies>
     </dependencyManagement>
 
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
             </plugin>
         </plugins>
     </build>

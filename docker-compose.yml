@@ -1,0 +1,11 @@
+version: '8.4'
+
+services:
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: projet-JEE
+    ports:
+      - "3306:3306"
