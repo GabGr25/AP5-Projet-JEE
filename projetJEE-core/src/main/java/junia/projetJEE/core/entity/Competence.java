@@ -1,7 +1,9 @@
 package junia.projetJEE.core.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Competence extends GenericEntity {
 
     private String nom;
@@ -10,6 +12,16 @@ public class Competence extends GenericEntity {
 
     @ManyToOne
     private Classe classe;
+
+    public Competence() {
+
+    }
+
+    public Competence(String nom, String imageURL, Classe classe) {
+        this.nom = nom;
+        this.imageURL = imageURL;
+        this.classe = classe;
+    }
 
     public String getNom() {
         return nom;

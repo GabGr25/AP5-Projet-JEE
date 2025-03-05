@@ -6,14 +6,24 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "personnages")
 public class Personnage extends GenericEntity{
 
     private String nom;
     private String imageURL;
+
     @ManyToOne
     @Nullable
     private Donjon donjon;
+
+    public Personnage() {
+
+    }
+
+    public Personnage(String nom, String imageURL, @Nullable Donjon donjon) {
+        this.nom = nom;
+        this.imageURL = imageURL;
+        this.donjon = donjon;
+    }
 
     public String getNom() {
         return nom;

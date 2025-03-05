@@ -1,10 +1,22 @@
 package junia.projetJEE.core.entity;
 
-public class Classe extends GenericEntity{
+import jakarta.persistence.Entity;
+
+@Entity
+public class Classe extends GenericEntity {
 
     private String nom;
 
     private String imageURL;
+
+    public Classe() {
+
+    }
+
+    public Classe(String nom, String imageURL) {
+        this.nom = nom;
+        this.imageURL = imageURL;
+    }
 
     public String getNom() {
         return nom;

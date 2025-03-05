@@ -4,10 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "donjons")
 public class Donjon extends GenericEntity{
 
     private String nom;
+
+    public Donjon() {
+
+    }
+
+    public Donjon(String nom) {
+        this.nom = nom;
+    }
 
     public String getNom() {
         return nom;

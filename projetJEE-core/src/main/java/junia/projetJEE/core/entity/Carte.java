@@ -5,7 +5,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "cartes")
 public class Carte extends GenericEntity {
 
     private String nom;
@@ -14,6 +13,15 @@ public class Carte extends GenericEntity {
 
     @ManyToOne
     private Donjon donjons;
+
+    public Carte() {
+    }
+
+    public Carte(String nom, String imageURL, Donjon donjons) {
+        this.nom = nom;
+        this.imageURL = imageURL;
+        this.donjons = donjons;
+    }
 
     public String getNom() {
         return nom;
@@ -35,7 +43,7 @@ public class Carte extends GenericEntity {
         this.imageURL = imageURL;
     }
 
-    public void setDonjons(Donjon donjons) {
+    public void setDonjon(Donjon donjons) {
         this.donjons = donjons;
     }
 }
