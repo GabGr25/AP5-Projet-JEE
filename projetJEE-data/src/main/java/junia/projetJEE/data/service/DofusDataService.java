@@ -63,7 +63,7 @@ public class DofusDataService {
         Map<String, Donjon> donjons = new HashMap<>();
         donjons.put("refuge_sylvestre", createDonjon("Refuge Sylvestre"));
         donjons.put("galaxieme_dimension", createDonjon("Galaxième Dimension"));
-        donjons.put("bouf_royal", createDonjon("Bouf Boutou Royal"));
+        donjons.put("bouftou_royal", createDonjon("Bouftou Royal"));
         donjons.put("scarafeuille", createDonjon("Scarafeuille"));
         return donjons;
     }
@@ -113,7 +113,7 @@ public class DofusDataService {
         Map<String, Carte> cartes = new HashMap<>();
         cartes.put("refuge_sylvestre", createCarte("Donjon du Refuge Sylvestre", "donjon_refuge_sylvestre.png", donjons.get("refuge_sylvestre")));
         cartes.put("galaxieme_dimension", createCarte("Donjon de la Galaxième Dimension", "donjon_gelaxieme_dimension.png", donjons.get("galaxieme_dimension")));
-        cartes.put("bouf_boutou_royal", createCarte("Donjon du Bouf Boutou Royal", "donjon_bouf_boutou_royal.png", donjons.get("bouf_royal")));
+        cartes.put("bouftou_royale", createCarte("Donjon du Bouf Boutou Royal", "donjon_bouftou_royal.png", donjons.get("bouftou_royal")));
         cartes.put("scarafeuille", createCarte("Donjon de Scarafeuille", "donjon_scarafeuille.png", donjons.get("scarafeuille")));
         return cartes;
     }
@@ -131,7 +131,7 @@ public class DofusDataService {
     private Map<String, Personnage> registerPersonnages(Map<String, Donjon> donjons, Map<String, Classe> classes) {
         Map<String, Personnage> personnages = new HashMap<>();
         personnages.put("coco_royal", createPersonnage("Blop Coco Royal", "blop_coco_royal.png", donjons.get("bouf_royal")));
-        personnages.put("bouf_boutou_royale", createPersonnage("Bouf Boutou Royale", "bouf_boutou_royale.png", donjons.get("bouf_royal")));
+        personnages.put("bouftou_royale", createPersonnage("Bouftou Royale", "bouftou_royale.png", donjons.get("bouftou_royal")));
         personnages.put("craqueleur", createPersonnage("Craqueleur", "Craqueleur.png", null));
         personnages.put("kwakwa", createPersonnage("Kwakwa", "kwakwa.png", null));
         personnages.put("maitre_bolet", createPersonnage("Maître Bolet", "Maitre_bolet.png", null));
