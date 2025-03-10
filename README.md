@@ -1,6 +1,6 @@
 # AP5-Projet-JEE
 # Notre groupe est composé de : GINÉ Alexandre et GRESSIER Gabriel
-																						                                    # Dofusdle - Le jeu inspiré de Dofus
+# Dofusdle - Le jeu inspiré de Dofus
 Description du projet:
 
 Dofusdle est un jeu en ligne inspiré des célèbres jeux comme Loldle et Smashdle.
