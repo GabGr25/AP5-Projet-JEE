@@ -104,7 +104,7 @@ public class DofusDataService {
         System.out.println("Enregistrement de la classe : " + nom);
         Classe classe = new Classe();
         classe.setNom(nom);
-        classe.setImageURL("classes/" + imageUrl);
+        classe.setImageURL("/assets/classes/" + imageUrl);
         classeService.save(classe);
         return classe;
     }
@@ -122,7 +122,7 @@ public class DofusDataService {
         System.out.println("Enregistrement de la carte : " + nom);
         Carte carte = new Carte();
         carte.setNom(nom);
-        carte.setImageURL("cartes/" + imageUrl);
+        carte.setImageURL("/assets/cartes/" + imageUrl);
         carte.setDonjon(donjon);
         carteService.save(carte);
         return carte;
@@ -148,7 +148,7 @@ public class DofusDataService {
         System.out.println("Enregistrement du personnage : " + nom);
         Personnage personnage = new Personnage();
         personnage.setNom(nom);
-        personnage.setImageURL("personnages/" + imageUrl);
+        personnage.setImageURL("/assets/personnages/" + imageUrl);
         personnage.setDonjon(donjon);
         personnageService.save(personnage);
         return personnage;
@@ -217,7 +217,7 @@ public class DofusDataService {
         System.out.println("Enregistrement de la compétence : " + nom);
         Competence competence = new Competence();
         competence.setNom(nom);
-        competence.setImageURL("competences/" + imageUrl);
+        competence.setImageURL("/assets/competences/" + imageUrl);
         competence.setClasse(classe);
         competenceService.save(competence);
     }
