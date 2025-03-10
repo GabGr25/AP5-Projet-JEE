@@ -3,6 +3,7 @@ package junia.projetJEE.web.controller;
 import junia.projetJEE.core.entity.Personnage;
 import junia.projetJEE.core.service.PersonnageService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,6 +17,11 @@ public class PersonnageController {
 
     public PersonnageController(PersonnageService personnageService) {
         this.personnageService = personnageService;
+    }
+
+    @GetMapping({"/", ""})
+    public String getPersonnage(ModelMap modelMap) {
+        return "Personnage";
     }
 
     @GetMapping("/today")
