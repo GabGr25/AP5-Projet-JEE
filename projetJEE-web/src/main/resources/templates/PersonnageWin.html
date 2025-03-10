@@ -18,14 +18,9 @@
 
 <img th:src="${personnage.getImageURL()}" alt="Image de personnage Dofus" src=""/>
 
-<form action="/personnages/validator" method="post">
-    <label>
-        <input type="text" name="Name" placeholder="Entrez un nom de personnage" required>
-    </label>
-    <button type="submit">Valider</button>
-</form>
+<h2 th:text="${personnage.getNom()}"></h2>
 
-<p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
+<h3>Bravo tu as trouvé le personnage du jour !</h3>
 
 </body>
 </html>
