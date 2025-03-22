@@ -13,15 +13,15 @@
 </head>
 
 <body>
-
+<div class="blur-overlay"></div>
 <h1>Dofusdle - Le jeu inspiré de Dofus</h1>
 
-<img src="/assets/background/Dofus_Logo.png" alt="Logo" class="logo">
+<img src="/assets/background/Dofus.png" alt="Logo" class="logo">
 
 
 <img th:src="${personnage.getImageURL()}" alt="Image de personnage Dofus" src=""/>
 
-<form action="/personnages/validator" method="post">
+<form id="msform" action="/personnages/validator" method="post">
     <label>
         <select name="Name" id="PersonnageName" required>
             <option value="">Sélectionnez un nom de Personnage</option>
@@ -30,6 +30,8 @@
     <button type="submit">Valider</button>
 </form>
 <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
+
+<a href="/" class="btn-dofus">Retour au Menu</a>
 
 <script>
     // Appel de l'API pour les noms de cartes
