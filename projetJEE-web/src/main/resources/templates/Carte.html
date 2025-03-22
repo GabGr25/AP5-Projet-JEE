@@ -19,29 +19,35 @@
 <img src="/assets/background/Dofus_Logo.png" alt="Logo" class="logo">
 
 
-<img th:src="${personnage.getImageURL()}" alt="Image de personnage Dofus" src=""/>
+<img th:src="${carte.getImageURL()}" alt="Image de Donjon Dofus" src=""/>
 
-<form action="/personnages/validator" method="post">
+<form action="/cartes/validator" method="post">
     <label>
-        <select name="Name" id="PersonnageName" required>
-            <option value="">Sélectionnez un nom de Personnage</option>
+        <select name="Name" id="carteName" required>
+            <option value="">Sélectionnez un nom de Donjon</option>
         </select>
     </label>
     <button type="submit">Valider</button>
 </form>
+
+
 <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
+
+<ul>
+    <li th:each="carte : ${cartes}" th:text="${carte.nom}"></li>
+</ul>
 
 <script>
     // Appel de l'API pour les noms de cartes
-    fetch('/personnages/noms')
+    fetch('/cartes/noms')
         .then(response => {
             if (!response.ok) {
-                throw new Error("Erreur lors de la récupération des personnages");
+                throw new Error("Erreur lors de la récupération des noms de carte");
             }
             return response.json();
         })
         .then(data => {
-            const selectElement = document.getElementById("PersonnageName");
+            const selectElement = document.getElementById("carteName");
 
             // Ajouter les options au select
             data.forEach(nom => {
@@ -55,5 +61,7 @@
             console.error("Erreur :", error);
         });
 </script>
+
+
 </body>
 </html>

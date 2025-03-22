@@ -4,17 +4,58 @@ html, body{
     margin:0;
     font-family: sans-serif;
 }
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/assets/background/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Assure que l'image couvre toute la hauteur */
+    color: white; /* Couleur du texte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-body{
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Marvel_Cinematic_Universe_logo.png"),
-    url("/img/marvel_bg.jpg");
-    background-position: top center, center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 300px,cover;
-    background-color:#000;
-    color:#fff;
-    padding-top:170px;
+/* Style pour le logo */
+.logo {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+/* Conteneur pour les boutons */
+.buttons-container {
+    display: flex;
+    gap: 20px; /* Espacement entre les boutons */
+}
+
+/* Boutons stylisés */
+.button {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    text-decoration: none; /* Désactive le soulignement des liens */
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.3s ease; /* Animation au survol */
+}
+
+/* Effets au hover pour les boutons */
+.button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); /* Agrandit légèrement le bouton au survol */
+}
+
+/* Centrer le contenu */
+.content {
+    text-align: center;
 }
 
 h1, pre{

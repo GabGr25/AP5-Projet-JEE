@@ -4,10 +4,12 @@ import junia.projetJEE.core.entity.Personnage;
 import junia.projetJEE.core.service.IdGeneratorService;
 import junia.projetJEE.core.service.PersonnageService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 @RequestMapping("/personnages")
@@ -27,6 +29,12 @@ public class PersonnageController {
         Personnage personnage = personnageService.findOne(personnageId);
         modelMap.addAttribute("personnage", personnage);
         return "Personnage";
+    }
+
+    @GetMapping("/noms")
+    @ResponseBody
+    public List<String> getCarteNoms() {
+        return personnageService.getAllPersonnage(); // Appelle la nouvelle méthode du service
     }
 
     @PostMapping("/validator")
