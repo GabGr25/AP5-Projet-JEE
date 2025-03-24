@@ -19,7 +19,7 @@ public class PersonnageService extends GenericService<Personnage> {
         this.personnageDAO = internalDAO;
     }
 
-    public List<String> getAllPersonnage() {
+    public List<String> getAllPersonnageNoms() {
         List<Personnage> personnages = findAll();
         return personnages.stream()
                 .map(Personnage::getNom)
