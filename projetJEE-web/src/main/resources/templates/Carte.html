@@ -21,44 +21,17 @@
 
 <img th:src="${carte.getImageURL()}" alt="Image de Donjon Dofus" src=""/>
 
-<form id="msform" action="/cartes/validator" method="post">
-    <label>
-        <select name="Name" id="carteName" required>
-            <option value="">Sélectionnez un nom de Donjon</option>
-        </select>
-    </label>
+<form action="/cartes/validator" method="post">
+    <select id="CarteName" name="nomCarte" required>
+        <option value="" disabled selected>Choisissez un nom de donjon...</option>
+        <option th:each="nom : ${nomsCartes}" th:value="${nom}" th:text="${nom}"></option>
+    </select>
     <button type="submit">Valider</button>
 </form>
 
-
 <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
 
-<a href="/" class="btn-dofus">Retour au Menu</a>
-<script>
-    // Appel de l'API pour les noms de cartes
-    fetch('/cartes/noms')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erreur lors de la récupération des noms de carte");
-            }
-            return response.json();
-        })
-        .then(data => {
-            const selectElement = document.getElementById("carteName");
-
-            // Ajouter les options au select
-            data.forEach(nom => {
-                const option = document.createElement("option");
-                option.value = nom; // La valeur envoyée dans le formulaire
-                option.textContent = nom; // Le texte affiché à l'utilisateur
-                selectElement.appendChild(option);
-            });
-        })
-        .catch(error => {
-            console.error("Erreur :", error);
-        });
-</script>
-
+<a href="/" class="btn-retour">Retour au Menu</a>
 
 </body>
 </html>

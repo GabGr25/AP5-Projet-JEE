@@ -21,41 +21,16 @@
 
 <img th:src="${personnage.getImageURL()}" alt="Image de personnage Dofus" src=""/>
 
-<form id="msform" action="/personnages/validator" method="post">
-    <label>
-        <select name="Name" id="PersonnageName" required>
-            <option value="">Sélectionnez un nom de Personnage</option>
-        </select>
-    </label>
+<form action="/personnages/validator" method="post">
+    <select id="PersonnageName" name="nomPersonnage" required>
+        <option value="" disabled selected>Choisissez un personnage...</option>
+        <option th:each="nom : ${nomsPersonnages}" th:value="${nom}" th:text="${nom}"></option>
+    </select>
     <button type="submit">Valider</button>
 </form>
 <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
 
-<a href="/" class="btn-dofus">Retour au Menu</a>
+<a href="/" class="btn-retour">Retour au Menu</a>
 
-<script>
-    // Appel de l'API pour les noms de cartes
-    fetch('/personnages/noms')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erreur lors de la récupération des personnages");
-            }
-            return response.json();
-        })
-        .then(data => {
-            const selectElement = document.getElementById("PersonnageName");
-
-            // Ajouter les options au select
-            data.forEach(nom => {
-                const option = document.createElement("option");
-                option.value = nom; // La valeur envoyée dans le formulaire
-                option.textContent = nom; // Le texte affiché à l'utilisateur
-                selectElement.appendChild(option);
-            });
-        })
-        .catch(error => {
-            console.error("Erreur :", error);
-        });
-</script>
 </body>
 </html>
