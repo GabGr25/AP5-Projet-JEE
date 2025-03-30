@@ -69,3 +69,95 @@ body {
 .content {
     text-align: center;
 }
+
+#msform {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#msform select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    appearance: none;
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"><polygon points="0,0 20,0 10,10"/></svg>') no-repeat right 15px top 50%;
+    background-color: #f8f9fa;
+    background-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#msform select:focus {
+    outline: none;
+    border-color: #8dc63f;
+}
+
+#msform button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #8dc63f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#msform button:hover {
+    background-color: #76a32f;
+}
+
+.btn-dofus {
+    display: block;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #f4c430;
+    color: #3e3e3e;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-dofus:hover {
+    background-color: #e8b527;
+    transform: scale(1.05);
+}
+
+/*Design pour le menu */
+.content {
+    text-align: center;
+    z-index: 1;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement les boutons */
+    gap: 20px; /* Espacement entre les boutons */
+    margin-top: 20px; /* Espace au-dessus des boutons */
+}
+
+.buttons-container .button {
+    padding: 12px 24px;
+    background-color: #8dc63f; /* Vert Dofus pour harmoniser */
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons-container .button:hover {
+    background-color: #76a32f;
+}
