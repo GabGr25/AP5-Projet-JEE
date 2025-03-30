@@ -32,12 +32,25 @@ body {
 
 
 /* Style pour le logo */
-.logo {
+.logo-menu {
     width: 300px;
     height: 300px;
-    margin-bottom: 15px;
 }
 
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.image-carte {
+    width: 400px;
+    height: 300px;
+}
+
+.titre-menu {
+    margin-top: -20px;
+    margin-bottom: 15px;
+}
 
 /* Conteneur pour les boutons */
 .buttons-container {
@@ -72,11 +85,13 @@ body {
 
 #msform {
     max-width: 500px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 30px;
-    background: #ffffff;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    border-radius: 12px;
+    background-color: #2c2f38; /* Même couleur que .game-title */
+    color: #8dc63f; /* Texte vert comme le titre */
+    border: 2px solid #8dc63f; /* Même bordure verte */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.24);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -84,10 +99,10 @@ body {
     width: 100%;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #8dc63f; /* Bordure verte */
+    background-color: #2c2f38; /* Fond sombre */
+    color: #8dc63f; /* Texte vert */
     appearance: none;
-    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray"><polygon points="0,0 20,0 10,10"/></svg>') no-repeat right 15px top 50%;
-    background-color: #f8f9fa;
     background-size: 12px;
     cursor: pointer;
     transition: border-color 0.3s;
@@ -143,21 +158,46 @@ body {
 
 .buttons-container {
     display: flex;
-    justify-content: center; /* Centre horizontalement les boutons */
+    flex-direction: column; /* Affiche les boutons en colonne */
+    align-items: center; /* Centre les boutons horizontalement */
     gap: 20px; /* Espacement entre les boutons */
     margin-top: 20px; /* Espace au-dessus des boutons */
 }
 
 .buttons-container .button {
+    width: 200px; /* Largeur fixe pour tous les boutons */
     padding: 12px 24px;
-    background-color: #8dc63f; /* Vert Dofus pour harmoniser */
+    background-color: #8dc63f;
     color: #fff;
     border-radius: 8px;
     text-decoration: none;
     font-size: 16px;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
 .buttons-container .button:hover {
     background-color: #76a32f;
 }
+
+.game-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2c2f38;
+    color: #8dc63f;
+    border: 2px solid #8dc63f;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.24);
+}
+
+.game-subtitle {
+    color: #b0b0b0;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+

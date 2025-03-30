@@ -12,11 +12,16 @@
 
 <body>
 <div class="blur-overlay"></div>
-<h1>Dofusdle - Le jeu inspiré de Dofus</h1>
 
 <img src="/assets/background/Dofus.png" alt="Logo" class="logo">
 
-<img th:src="${carte.getImageURL()}" alt="Image de Donjon Dofus" src=""/>
+<div class="game-title">
+    <h1>Devine le donjon du jour !</h1>
+    <p class="game-subtitle">Selectionne n'importe quel nom de donjon !.</p>
+</div>
+
+
+<img th:src="${carte.getImageURL()}" alt="Image de Donjon Dofus" src="" class="image-carte"/>
 
 <form id="msform" action="/cartes/validator" method="post">
     <label>
