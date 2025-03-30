@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpSession;
 import junia.projetJEE.core.entity.Carte;
 import junia.projetJEE.core.service.IdGeneratorService;
 import junia.projetJEE.core.service.CarteService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,8 @@ public class CarteController {
 
     private final CarteService carteService;
     private final IdGeneratorService idGeneratorService;
+    private final static Logger LOGGER = LoggerFactory.getLogger(CarteController.class);
+
 
     public CarteController(CarteService carteService, IdGeneratorService idGeneratorService) {
         this.carteService = carteService;
@@ -27,8 +31,10 @@ public class CarteController {
 
         if (carte == null) {
             long carteId = idGeneratorService.generateId(carteService);
+            LOGGER.debug("Carte id : {}", carteId);
             carte = carteService.findOne(carteId);
             session.setAttribute("carteDuJour", carte);
+            LOGGER.debug("Carte added to session : {}", session.getAttribute("carteDuJour"));
         }
 
         return carte;
@@ -41,6 +47,7 @@ public class CarteController {
         if (nomsCartes == null) {
             nomsCartes = carteService.getAllCarteNoms();
             session.setAttribute("allCartesNames", nomsCartes);
+            LOGGER.info("Cartes added to session Attribute");
         }
 
         return nomsCartes;
@@ -52,7 +59,9 @@ public class CarteController {
         List<String> cartes = getOrCreateAllNamesCartes(session);
 
         modelMap.addAttribute("carte", carte);
+        LOGGER.debug("carte in modelMap : {}", carte);
         modelMap.addAttribute("nomsCartes", cartes);
+        LOGGER.debug("cartes in modelMap : {}", cartes);
 
         return "Carte";
     }
@@ -67,10 +76,14 @@ public class CarteController {
 
         if (carte.getNom().equalsIgnoreCase(name)) {
             session.setAttribute("CarteWin", true);
+            LOGGER.info("Carte trouvé");
+            LOGGER.debug("CarteWin set to  {}", session.getAttribute("CarteWin"));
             return "redirect:/cartes/win";
         }
 
+        LOGGER.info("Carte pas trouvé");
         modelMap.addAttribute("errorMessage", "Ce n'est pas le bon Donjon ... Essayer encore !");
+        LOGGER.info("Erreur ajouté au model map");
         return "Carte";
     }
 
@@ -79,6 +92,7 @@ public class CarteController {
         if (Boolean.TRUE.equals(gagne)) {
             Carte carte = getOrGenerateCarte(session);
             modelMap.addAttribute("carte", carte);
+            LOGGER.info("Bonne réponse, l'utilisateur a gagné");
             return "CarteWin";
         }
         return "redirect:/cartes";

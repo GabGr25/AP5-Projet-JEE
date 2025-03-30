@@ -17,12 +17,12 @@
 <div class="blur-overlay"></div>
 <img src="/assets/background/Dofus.png" alt="Logo" class="logo">
 
-<img th:src="${carte.getImageURL()}" alt="Image de personnage Dofus" src=""/>
+<img th:src="${carte.getImageURL()}" alt="Image de Donjon Dofus" src="" class="image-carte"/>
 
 
 <div class="game-title">
     <h1 th:text="${carte.getNom()}"></h1>
-    <p>Bravo tu as trouvé le Donjon du jour !</p>
+    <p class="game-subtitle">Bravo tu as trouvé le Donjon du jour !</p>
 </div>
 
 <a href="/" class="btn-dofus">Retour au Menu</a>
