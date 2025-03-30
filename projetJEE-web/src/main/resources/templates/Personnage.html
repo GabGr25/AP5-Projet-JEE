@@ -7,9 +7,7 @@
 
     <title>Dofusdle</title>
 
-
     <link rel="stylesheet" href="/css/styles.css" >
-
 </head>
 
 <body>
@@ -18,19 +16,21 @@
 
 <img src="/assets/background/Dofus.png" alt="Logo" class="logo">
 
-
 <img th:src="${personnage.getImageURL()}" alt="Image de personnage Dofus" src=""/>
 
-<form action="/personnages/validator" method="post">
-    <select id="PersonnageName" name="nomPersonnage" required>
-        <option value="" disabled selected>Choisissez un personnage...</option>
-        <option th:each="nom : ${nomsPersonnages}" th:value="${nom}" th:text="${nom}"></option>
-    </select>
+<form id="msform" action="/personnages/validator" method="post">
+    <label>
+        <select id="PersonnageName" name="nomPersonnage" required>
+            <option value="" disabled selected>Choisissez un personnage...</option>
+            <option th:each="nom : ${nomsPersonnages}" th:value="${nom}" th:text="${nom}"></option>
+        </select>
+    </label>
     <button type="submit">Valider</button>
 </form>
+
 <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
 
-<a href="/" class="btn-retour">Retour au Menu</a>
+<a href="/" class="btn-dofus">Retour au Menu</a>
 
 </body>
 </html>
