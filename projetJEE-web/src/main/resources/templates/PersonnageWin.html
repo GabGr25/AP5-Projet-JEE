@@ -14,13 +14,15 @@
 
 <body>
 <div class="blur-overlay"></div>
-<h1>Dofusdle - Le jeu inspiré de Dofus</h1>
+<img src="/assets/background/Dofus.png" alt="Logo" class="logo">
 
 <img th:src="${personnage.getImageURL()}" alt="Image de personnage Dofus" src=""/>
 
-<h2 th:text="${personnage.getNom()}"></h2>
 
-<h3>Bravo tu as trouvé le personnage du jour !</h3>
+<div class="game-title">
+    <h1 th:text="${personnage.getNom()}"></h1>
+    <p>Bravo tu as trouvé le personnage du jour !</p>
+</div>
 
 <a href="/" class="btn-dofus">Retour au Menu</a>
 
