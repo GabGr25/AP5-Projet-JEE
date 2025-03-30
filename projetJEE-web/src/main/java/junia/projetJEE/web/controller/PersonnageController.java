@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpSession;
 import junia.projetJEE.core.entity.Personnage;
 import junia.projetJEE.core.service.IdGeneratorService;
 import junia.projetJEE.core.service.PersonnageService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ public class PersonnageController {
 
     private final PersonnageService personnageService;
     private final IdGeneratorService idGeneratorService;
+    private final static Logger LOGGER = LoggerFactory.getLogger(PersonnageController.class);
 
     public PersonnageController(PersonnageService personnageService, IdGeneratorService idGeneratorService) {
         this.personnageService = personnageService;
@@ -27,8 +30,10 @@ public class PersonnageController {
 
         if (personnage == null) {
             long personnageId = idGeneratorService.generateId(personnageService);
+            LOGGER.debug("Personnage id : {}", personnageId);
             personnage = personnageService.findOne(personnageId);
             session.setAttribute("personnageDuJour", personnage);
+            LOGGER.debug("Personnage added to session : {}", session.getAttribute("personnageDuJour"));
         }
 
         return personnage;
@@ -41,6 +46,7 @@ public class PersonnageController {
         if (nomsPersonnages == null) {
             nomsPersonnages = personnageService.getAllPersonnageNoms();
             session.setAttribute("allPersonnageNames", nomsPersonnages);
+            LOGGER.info("Personnages added to session Attribute");
         }
 
         return nomsPersonnages;
@@ -52,7 +58,9 @@ public class PersonnageController {
         List<String> nomsPersonnages = getOrCreateAllNamesPersonnages(session);
 
         modelMap.addAttribute("personnage", personnage);
+        LOGGER.debug("personnage in modelMap : {}", personnage);
         modelMap.addAttribute("nomsPersonnages", nomsPersonnages);
+        LOGGER.debug("personnages in modelMap : {}", nomsPersonnages);
 
         return "Personnage";
     }
@@ -67,10 +75,14 @@ public class PersonnageController {
 
         if (personnage.getNom().equalsIgnoreCase(name)) {
             session.setAttribute("PersoWin", true);
+            LOGGER.info("Personnage trouvé");
+            LOGGER.debug("PersoWin set to  {}", session.getAttribute("PersoWin"));
             return "redirect:/personnages/win";
         }
 
+        LOGGER.info("Personnage pas trouvé");
         modelMap.addAttribute("errorMessage", "Ce n'est pas le bon nom ... Essaye encore !");
+        LOGGER.info("Erreur ajouté au model map");
         return "Personnage";
     }
 
@@ -79,6 +91,7 @@ public class PersonnageController {
         if (Boolean.TRUE.equals(gagne)) {
             Personnage personnage = getOrGeneratePersonnage(session);
             modelMap.addAttribute("personnage", personnage);
+            LOGGER.info("Bonne réponse, l'utilisateur a gagné");
             return "PersonnageWin";
         }
         return "redirect:/personnages";
