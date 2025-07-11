@@ -43,12 +43,17 @@ public class DofusDataService {
 
     @PostConstruct
     public void initData() {
-        cleanDB();
-        final Map<String, Donjon> donjons = registerDonjons();
-        final Map<String, Classe> classes = registerClasses();
-        final Map<String, Carte> cartes = registerCartes(donjons);
-        final Map<String, Personnage> personnages = registerPersonnages(donjons, classes);
-        registerCompetences(classes);
+        if (personnageService.countAll() == 0) {
+            cleanDB();
+            final Map<String, Donjon> donjons = registerDonjons();
+            final Map<String, Classe> classes = registerClasses();
+            final Map<String, Carte> cartes = registerCartes(donjons);
+            final Map<String, Personnage> personnages = registerPersonnages(donjons, classes);
+            registerCompetences(classes);
+            System.out.println("Base de données initialisée avec succès.");
+        } else {
+            System.out.println("Base de données déjà initialisée, seeding ignoré.");
+        }
     }
 
     private void cleanDB() {
