@@ -1,18 +1,44 @@
-# AP5-Projet-JEE
-# Notre groupe est composé de : GINÉ Alexandre et GRESSIER Gabriel
-																						                                    # Dofusdle - Le jeu inspiré de Dofus
-Description du projet:
+# 🧙 Dofusdle - Un jeu inspiré de l'univers de Dofus
 
-Dofusdle est un jeu en ligne inspiré des célèbres jeux comme Loldle et Smashdle.
-Il propose aux joueurs de tester leurs connaissances sur Dofus, le MMORPG emblématique développé par Ankama.
-Chaque jour, un nouveau défi est proposé aux joueurs sous différentes formes de mini-jeux.
+## Présentation du projet
 
-L'objectif principal de Dofusdle est de permettre aux fans du jeu de tester leurs connaissances sur l'univers de Dofus tout en s'amusant.
-Les joueurs devront deviner des personnages, des lieux, et des classes.
+**Dofusdle** est une application web ludique s’inspirant de jeux comme *Loldle* ou *Smashdle*. Elle permet aux fans de **Dofus**, le célèbre MMORPG développé par Ankama, de tester leurs connaissances à travers différents mini-jeux quotidiens.
 
-Inspiré par Dofus
+Chaque jour, un nouveau défi est proposé : deviner un personnage, une classe, un lieu iconique ou d'autres éléments issus du lore de Dofus.
 
-Dofusdle puise son inspiration dans l'univers riche et varié de Dofus, un MMORPG stratégique au tour par tour qui plonge les joueurs dans un monde fantastique peuplé de créatures, de héros et de légendes.
-Grâce à ses mécaniques uniques et son lore profond, Dofus offre un terrain de jeu parfait pour un jeu de devinettes interactif.
+---
 
-Notre groupe est composé de : GINÉ Alexandre et GRESSIER Gabriel
+## 👥 Membres du groupe
+
+* **GRESSIER Gabriel**
+* **GINÉ Alexandre**
+
+---
+
+## 🎮 À propos de Dofus et de l’inspiration
+
+Dofusdle tire son essence de l’univers riche et stratégique de **Dofus**, un jeu au tour par tour qui plonge les joueurs dans un monde peuplé de créatures fantastiques, de héros épiques et de récits légendaires. Cette richesse narrative en fait un terrain de jeu idéal pour créer une expérience de devinettes immersive et originale.
+
+---
+
+## ⚙️ Prérequis et configuration
+
+### 📁 Préparation de l'environnement
+
+1. Copier le contenu du fichier `.env.example` :
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Vérifiez que **Docker** et **Docker Compose** sont bien installés sur votre machine.
+
+---
+
+### 🚀 Lancer l'application
+
+```bash
+docker compose up
+```
+
+L'application sera accessible à l'adresse : [http://localhost:8080](http://localhost:8080)
